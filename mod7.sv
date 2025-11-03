@@ -8,8 +8,7 @@ module mod7 (
 
   logic [2:0] count, ncount;
 
-  // State register (sync reset)
-  always_ff @(posedge clk) begin
+  always_ff@(posedge(clk), posedge(rst)) begin
     if (rst) begin
       count <= 3'd0;
     end
